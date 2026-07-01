@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const qrCodeContainer = document.getElementById('qrCode');
   if (qrCodeContainer && typeof QRCode !== 'undefined') {
-    const upiString = 'upi://pay?pa=keethi8015-2@okaxis&pn=Klyra%20Studio&am=0&tn=Jewellery%20Order';
+    const upiString = 'upi://pay?pa=keerthi8015-2@okaxis&pn=Klyra%20Studio&am=0&tn=Jewellery%20Order';
     const qr = new QRCode(qrCodeContainer, {
       text: upiString,
       width: 100,

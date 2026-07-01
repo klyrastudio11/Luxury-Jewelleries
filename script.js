@@ -242,6 +242,17 @@ if (checkoutForm) {
   });
 }
 
+const payViaUpiButton = document.getElementById('payViaUpi');
+if (payViaUpiButton) {
+  payViaUpiButton.addEventListener('click', () => {
+    const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+    const shipping = 40;
+    const total = subtotal + shipping;
+    const upiString = `upi://pay?pa=keethi8015-2@okaxis&pn=Klyra%20Studio&am=${encodeURIComponent(total)}&tn=Jewellery%20Order`;
+    window.location.href = upiString;
+  });
+}
+
 if (userOrdersForm) {
   userOrdersForm.addEventListener('submit', async (event) => {
     event.preventDefault();

@@ -119,11 +119,14 @@ h1 { font-size: clamp(2.6rem, 4.5vw, 4.4rem); line-height: 1.05; margin: 12px 0;
 }
 .scan-details {
   flex: 1 1 180px;
+  min-width: 0;
 }
 .scan-details p {
   margin: 8px 0 0;
   font-size: 0.95rem;
   color: #4d4337;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .scan-code {
   min-width: 140px;
@@ -204,5 +207,7 @@ h1 { font-size: clamp(2.6rem, 4.5vw, 4.4rem); line-height: 1.05; margin: 12px 0;
   .hero, .cards-grid, .feature-grid, .checkout-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .footer { flex-direction: column; align-items: flex-start; }
+  .scan-box-content { flex-direction: column; align-items: stretch; }
+  .scan-code { width: 100%; max-width: 280px; margin: 0 auto; }
 }
 

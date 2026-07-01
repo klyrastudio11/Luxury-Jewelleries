@@ -254,7 +254,7 @@ if (payViaUpiButton) {
     const shipping = 40;
     const total = subtotal + shipping;
     const amount = total.toFixed(2);
-    const upiString = `upi://pay?pa=keethi8015-2@okaxis&pn=Klyra%20Studio&am=${encodeURIComponent(amount)}&cu=INR&tn=Jewellery%20Order`;
+    const upiString = `upi://pay?pa=keerthi8015-2@okaxis&pn=Klyra%20Studio&am=${encodeURIComponent(amount)}&cu=INR&tn=Jewellery%20Order`;
 
     const link = document.createElement('a');
     link.href = upiString;

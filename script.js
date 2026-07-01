@@ -245,11 +245,26 @@ if (checkoutForm) {
 const payViaUpiButton = document.getElementById('payViaUpi');
 if (payViaUpiButton) {
   payViaUpiButton.addEventListener('click', () => {
+    if (cart.length === 0) {
+      if (orderMessage) orderMessage.textContent = 'Add at least one item to your cart before paying.';
+      return;
+    }
+
     const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
     const shipping = 40;
     const total = subtotal + shipping;
-    const upiString = `upi://pay?pa=keethi8015-2@okaxis&pn=Klyra%20Studio&am=${encodeURIComponent(total)}&tn=Jewellery%20Order`;
-    window.location.href = upiString;
+    const amount = total.toFixed(2);
+    const upiString = `upi://pay?pa=keethi8015-2@okaxis&pn=Klyra%20Studio&am=${encodeURIComponent(amount)}&cu=INR&tn=Jewellery%20Order`;
+
+    const link = document.createElement('a');
+    link.href = upiString;
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    if (orderMessage) orderMessage.textContent = `Opening UPI app for ₹${amount}...`;
   });
 }
 

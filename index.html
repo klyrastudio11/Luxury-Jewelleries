@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klyra Studio | Luxury Jewellery</title>
+    <meta name="description" content="Order sculptural jewellery by Klyra Studio with a premium cart and checkout experience." />
+    <link rel="icon" href="Klyra.jpg" type="image/jpg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .brand-logo { 
+        border-radius: 50% !important; 
+        width: 36px !important;
+        height: 36px !important;
+      }
+      #receiptFile {
+        display: none;
+      }
+      .file-input-label {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #121212;
+        padding: 10px 20px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .file-input-label:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="#orders" class="brand" aria-label="Open orders">
+        <img src="Klyra.jpg" alt="Klyra logo" class="brand-logo" />
+        <span>KLYRA</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#collections">Collections</a>
+        <a href="#craft">Craftsmanship</a>
+        <a href="#checkout">Checkout</a>
+        <a href="#userOrders">Track order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-cta cart-button" id="cartToggle" aria-label="Open cart">
+        <span class="cart-icon">🛒</span>
+        <span id="cartCount">0</span>
+      </button>
+    </header>
+
+    <main id="home">
+      <section id="orders" class="section orders-section" style="display: none;">
+        <div class="section-heading">
+          <p class="eyebrow">Admin orders</p>
+          <h2>Order management</h2>
+        </div>
+        <p class="orders-note">Admin access is protected with the password Klyra@11. New orders appear here automatically and can be marked delivered.</p>
+        <div id="adminOrdersList" class="orders-list"></div>
+      </section>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Klyra Studio</p>
+          <h1>Jewellery that feels like a private legend.</h1>
+          <p class="hero-text">Discover sculptural heirlooms designed for modern romance, celebration, and timeless gifting.</p>
+          <div class="hero-actions">
+            <a href="#collections" class="btn btn-dark">Shop</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>24/7</strong><span>Private concierge</span></div>
+            <div><strong>100%</strong><span>White-glove delivery</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="Emerald Bow.png" alt="Emerald Bow necklace" />
+            <div class="hero-badge">Emerald Bow • Signature piece</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="collections" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Featured collections</p>
+          <h2>Signature pieces for unforgettable moments.</h2>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <img src="Emerald Bow.png" alt="Emerald Bow Necklace" />
+            <div class="card-body">
+              <h3>Emerald Bow Necklace</h3>
+              <p>🎀✨ The Emerald Bow Necklace - She doesn't wait to be gifted — she treats herself. This dainty gold bow necklace with a dangling emerald stone is everything your jewellery collection has been missing.</p>
+              <div class="card-footer">
+                <strong>₹249</strong>
+                <button class="add-btn" data-name="Emerald Bow Necklace" data-price="249">Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="Twin Heart.png" alt="Twin Heart Necklace" />
+            <div class="card-body">
+              <h3>Twin Heart Necklace</h3>
+              <p>💞 Two hearts beautifully intertwined, symbolizing everlasting love and an unbreakable bond. A timeless necklace crafted to add elegance to every moment.</p>
+              <div class="card-footer">
+                <strong>₹249</strong>
+                <button class="add-btn" data-name="Twin Heart Necklace" data-price="249">Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="Cuff bracelet.png" alt="Cuff Bracelet" />
+            <div class="card-body">
+              <h3>Cuff Bracelet</h3>
+              <p>The Coil - "Crafted in layers. Just like you." An architectural statement in warm gold tones.</p>
+              <div class="card-footer">
+                <strong>₹200</strong>
+                <button class="add-btn" data-name="Cuff Bracelet" data-price="200">Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="Diamond Leaf.png" alt="Diamond Leaf Necklace" />
+            <div class="card-body">
+              <h3>Diamond Leaf Necklace</h3>
+              <p>Crafted for the woman who carries elegance effortlessly — from morning coffee to candlelit evenings. Delicate. Timeless. Yours. 🍃💛</p>
+              <div class="card-footer">
+                <strong>₹300</strong>
+                <button class="add-btn" data-name="Diamond Leaf Necklace" data-price="300">Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="White shell disc pendant.png" alt="White shell disc pendant necklace" />
+            <div class="card-body">
+              <h3>White Shell Disc Pendant</h3>
+              <p>A dainty gold snake chain paired with a soft white natural shell pendant, finished with a gold leaf detail at the centre. Perfect for everyday wear or gifting. 🎁❤️</p>
+              <div class="card-footer">
+                <strong>₹300</strong>
+                <button class="add-btn" data-name="White Shell Disc Pendant" data-price="300">Add to cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="userOrders" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Order tracker</p>
+          <h2>Your orders</h2>
+        </div>
+        <p class="orders-note">Enter the email and phone used at checkout to view your order status and estimated delivery date.</p>
+        <form id="userOrdersForm" class="checkout-card form-card">
+          <input type="email" id="trackEmail" placeholder="Email" required />
+          <input type="tel" id="trackPhone" placeholder="Phone" required />
+          <button type="submit" class="btn btn-dark wide">Find my orders</button>
+          <p id="userOrderMessage" class="order-message"></p>
+        </form>
+        <div id="userOrdersList" class="orders-list"></div>
+      </section>
+
+      <section id="craft" class="section dark-section">
+        <div class="section-heading light">
+          <p class="eyebrow">Craftsmanship</p>
+          <h2>Every piece is formed through deliberate artistry.</h2>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Heirloom quality</h3>
+            <p>Ethically sourced stones with hand-finished details that catch light with grace.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Signature detailing</h3>
+            <p>Sculptural silhouettes and softly faceted brilliance for a modern heirloom.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Private concierge</h3>
+            <p>Personal styling guidance and bespoke appointment planning for every client.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="checkout" class="section checkout-section">
+        <div class="checkout-grid">
+          <div class="checkout-card">
+            <h2>Cart & checkout</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="summary-row"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+            <div class="summary-row"><span>Shipping</span><strong>₹40</strong></div>
+            <div class="summary-row total"><span>Total</span><strong id="total">₹0</strong></div>
+          </div>
+
+          <form id="checkoutForm" class="checkout-card form-card">
+            <h3>Customer details</h3>
+            <input type="text" id="fullName" placeholder="Full Name" required />
+            <input type="tel" id="phone" placeholder="Phone" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="text" id="address" placeholder="Address" required />
+            <input type="text" id="city" placeholder="City" required />
+            <input type="text" id="state" placeholder="State" required />
+            <input type="text" id="pincode" placeholder="Pincode" required />
+
+            <h3>Payment via UPI</h3>
+            <div class="payment-section">
+              <div class="upi-box scan-box">
+                <div class="scan-box-content">
+                  <div class="scan-details">
+                    <p><strong>UPI ID:</strong> keethi8015-2@okaxis</p>
+                    <p><strong>Phone:</strong> 6381163108</p>
+                    <p><strong>Email:</strong> klyrastudio112gmail.com</p>
+                  </div>
+                  <div class="scan-code">
+                    <p class="scan-label">Scan to Pay</p>
+                    <div id="qrCode" class="qr-code"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 16px;">
+              <label for="receiptFile" class="file-input-label">📸 Choose Screenshot</label>
+              <input type="file" id="receiptFile" accept="image/*" required />
+              <p id="fileName" style="font-size: 0.85rem; color: #888; margin-top: 8px; text-align: center;">No file chosen</p>
+              <p style="font-size: 0.85rem; color: #888; margin-top: 4px; text-align: center;">Upload proof of payment to complete your order</p>
+            </div>
+            <button type="submit" class="btn btn-dark wide">Place order</button>
+            <p id="orderMessage" class="order-message"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <p class="eyebrow">Visit the studio</p>
+          <h2>Book a private viewing</h2>
+        </div>
+        <div class="contact-card full-width">
+          <div class="contact-info">
+            <div class="contact-item">
+              <p><strong>📞 Call:</strong> 6381163108</p>
+            </div>
+            <div class="contact-item">
+              <p><strong>📧 Email:</strong> klyrastudio112gmail.com</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/klyra.studio_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow us on Instagram">Instagram</a>
+            <a href="https://wa.me/6381163108" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Chat with us on WhatsApp">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="qr-init.js"></script>
+    <script type="module" src="script.js?v=20260702"></script>
+  </body>
+</html>
